@@ -49,8 +49,8 @@ class dice:
 					
 		#--------------- Rolling the actual dice ------------------------------
 
-		rolled_sum=0
-		rolled_list= []
+		rolled_sum = 0
+		rolled_list = []
 		for x in range(a):
 			rolled = random.randint(1,b)
 			rolled_list.append(rolled)
@@ -75,7 +75,7 @@ class dice:
 		saved = 0
 		for save in range(mobnumber):
 			roll = dice.roll("1d20+%d" % modifier)
-			if roll > DC:
+			if roll >= DC:
 				saved += 1
 		return "%d of %d passed the save" % (saved, mobnumber)
 
@@ -87,15 +87,14 @@ class dice:
 
 #class syntax testing 
 #print(dice.roll("1d600-123"))
-print(dice.roll("2d6+3"))
-print(dice.roll("10d8+1")) 
-print(dice.roll("1d60"))
-print(dice.roll("5d20-1"))
-print(dice.roll("5d8+3", True))
+#print(dice.roll("1d600-123"))
 
-
-
+#print(dice.roll("2d6+3"))
+#print(dice.roll("10d8+1")) 
+#print(dice.roll("1d60"))
+#print(dice.roll("5d20-1"))
+#print(dice.roll("5d8+3", True))
 
 #mobsave testing:
 
-#print( dice.mobsave(200, 14, 3))
+print( dice.mobsave(200, 14, 3))
